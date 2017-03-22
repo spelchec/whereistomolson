@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_blank"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.olson.whereis.BlankActivity">
+
+    <com.google.android.gms.maps.MapView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/mapView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/mLatitudeTextView" />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        tools:context="com.example.mapwithmarker.MapsMarkerActivity"
+        android:layout_above="@+id/mLongitudeTextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/locationInformation"
+        android:layout_alignStart="@+id/mLongitudeTextView" />
+
+    <CheckBox
+        android:text="Get Location Updates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mRequestingLocationUpdates"
+        android:checked="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="mLastUpdateTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mLastUpdateTimeTextView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Get Current Location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/getCurrentLocation"
+        android:onClick="getLastLocation"
+        android:layout_above="@+id/mRequestingLocationUpdates"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/locationInformation"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/mapView" />
+
+    <TextView
+        android:text="mLongitudeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mLongitudeTextView"
+        android:layout_below="@+id/mapView"
+        android:layout_alignEnd="@+id/mLatitudeTextView"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:text="mLatitudeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:id="@+id/mLatitudeTextView"
+        android:layout_marginBottom="49dp"
+        android:layout_above="@+id/getCurrentLocation"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
